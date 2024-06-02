@@ -1,0 +1,65 @@
+@font-face {
+  font-family: digital-7;
+  src: url(./assets/fonts/digital-7.ttf);
+}
+@font-face {
+  font-family: FUTURA55REGULAR;
+  src: url(./assets/fonts/FUTURA55REGULAR.TTF);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: FUTURA55REGULAR;
+}
+body {
+  background-color: #d2dae2;
+}
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  background-image: url(./assets/imgs/clock.png);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  margin: 10px;
+}
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 50px;
+  font-family: digital-7;
+  margin-bottom: 10px;
+}
+.container button {
+  padding: 15px;
+  margin: 10px;
+  
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#reset-btn {
+  background-color: orange;
+}
+#stop-btn {
+  background-color: red;
+}
+#start-btn {
+  background-color: green;
+}
