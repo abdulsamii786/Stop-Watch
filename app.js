@@ -6,14 +6,18 @@ let stopBtn = document.getElementById("stop-btn");
 
 // diclaration of variables
 
+let mSec = 0;
 let sec = 0;
 let min = 0;
 let hour = 0;
 let id;
 
 function counting() {
-  sec++;
-  getText.innerText = `${hour}:${min}:${sec}`;
+  mSec++;
+  if (mSec === 99) {
+    sec++;
+    mSec = 0;
+  }
   if (sec === 60) {
     sec = 0;
     min++;
@@ -22,10 +26,11 @@ function counting() {
       hour++;
     }
   }
+  getText.innerText = `${hour}:${min}:${sec}:${mSec}`;
 }
 
 function startCounter() {
-  id = setInterval(counting, 1000);
+  id = setInterval(counting, 5);
   startBtn.setAttribute("disabled", "disabled");
   stopBtn.removeAttribute("disabled", "disabled");
 }
@@ -36,8 +41,9 @@ function stopCounter() {
 }
 function resetCounter() {
   clearInterval(id);
+  mSec = 0;
   sec = 0;
   min = 0;
   hour = 0;
-  getText.innerText = `00:00:00`;
+  getText.innerText = `00:00:00:00`;
 }
